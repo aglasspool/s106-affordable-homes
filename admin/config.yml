@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+    - name: 'team' 
+      label: 'Team Members'
+      label_singular: 'Team Member'
+      editor:
+          preview: false
+      delete: false
+      preview_path: 'team'
+      files:
+          - label: 'Members'
+            name: 'members'
+            file: 'data/members.json'
+            fields:
+                - label: Members
+                  name: members
+                  widget: list
+                  allow_add: true
+                  fields:
+                      - { label: 'Name', name: 'name', widget: 'string' }
+                      - label: 'Image'
+                        name: 'image'
+                        widget: 'object'
+                        fields:
+                            - { label: 'Photo', name: 'main', widget: 'image' }
+                            - { label: 'Photo Alt', name: 'alt', widget: 'image' }
+                      - { label: 'Position', name: 'position', widget: 'string' }
+                      - { label: 'Bio', name: 'bio', widget: 'string' }
+                      - { label: 'Background', name: 'background', widget: 'string' }
+                      - label: 'Social'
+                        name: 'social'
+                        widget: 'list'
+                        fields:
+                            - { label: 'Name', name: 'name', widget: 'string' }
+                            - { label: 'Link', name: 'link', widget: 'string' }
