@@ -12,36 +12,36 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-    - name: 'team' 
-      label: 'Team Members'
-      label_singular: 'Team Member'
+    - name: 'schemes' 
+      label: 'Completed Schemes'
+      label_singular: 'Scheme'
       editor:
           preview: false
       delete: false
-      preview_path: 'team'
+      preview_path: 'scheme'
       files:
-          - label: 'Members'
-            name: 'members'
-            file: 'data/members.json'
+          - label: 'Schemes'
+            name: 'schemes'
+            file: 'data/schemes.json'
             fields:
-                - label: Members
-                  name: members
+                - label: Schemes
+                  name: schemes
                   widget: list
                   allow_add: true
                   fields:
-                      - { label: 'Name', name: 'name', widget: 'string' }
+                      - { label: 'Reference', name: 'reference', widget: 'string' }
                       - label: 'Image'
                         name: 'image'
                         widget: 'object'
                         fields:
                             - { label: 'Photo', name: 'main', widget: 'image' }
                             - { label: 'Photo Alt', name: 'alt', widget: 'image' }
-                      - { label: 'Position', name: 'position', widget: 'string' }
-                      - { label: 'Bio', name: 'bio', widget: 'string' }
-                      - { label: 'Background', name: 'background', widget: 'string' }
-                      - label: 'Social'
+                      - { label: 'Description', name: 'description', widget: 'string' }
+                      - { label: 'Address', name: 'address', widget: 'string' }
+                      - { label: 'Completion date', name: 'completion', widget: 'string' }
+                      - label: 'Social Rent'
                         name: 'social'
                         widget: 'list'
                         fields:
-                            - { label: 'Name', name: 'name', widget: 'string' }
-                            - { label: 'Link', name: 'link', widget: 'string' }
+                            - { label: 'Address', name: 'address', widget: 'string' }
+                            - { label: 'UPRN', name: 'uprn', widget: 'string' }
