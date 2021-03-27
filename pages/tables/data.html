@@ -1734,6 +1734,44 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
+
+
+	    <div class="card">
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Reference</th>
+                <th>description</th>
+                <th>Site Address</th>
+                <th>Completion Date</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Reference</th>
+                <th>Description</th>
+                <th>Site Address</th>
+                <th>Completion Date</th>
+            </tr>
+        </tfoot>
+    </table>
+	    </div>
+	<script>
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "ajax": {
+            "url": "data/schemes.json",
+            "dataSrc": ""
+        },
+        "columns": [
+            { "data": "reference" },
+            { "data": "description" },
+            { "data": "address" },
+            { "data": "completion" }
+        ]
+    } );
+} );
+	</script>
           </div>
           <!-- /.col -->
         </div>
