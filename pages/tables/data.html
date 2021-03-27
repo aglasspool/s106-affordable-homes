@@ -1756,22 +1756,6 @@
         </tfoot>
     </table>
 	    </div>
-	<script>
-$(document).ready(function() {
-    $('#example').DataTable( {
-        "ajax": {
-            "url": "data/schemes.json",
-            "dataSrc": ""
-        },
-        "columns": [
-            { "data": "reference" },
-            { "data": "description" },
-            { "data": "address" },
-            { "data": "completion" }
-        ]
-    } );
-} );
-	</script>
           </div>
           <!-- /.col -->
         </div>
@@ -1836,5 +1820,19 @@ $(document).ready(function() {
     });
   });
 </script>
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable( {
+        "ajax": "../../data/schemes.json",
+        "columns": [
+            { "data": "reference" },
+            { "data": "description" },
+            { "data": "address" },
+            { "data": "completion" }
+        ]
+    } );
+} );
+</script>
+
 </body>
 </html>
